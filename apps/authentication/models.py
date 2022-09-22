@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Create your models here.
 """
 Since we are using Django default User models for authentication, Using models.py file for defining Signup and Login Forms.
@@ -70,3 +71,8 @@ class LoginForm(forms.Form):
         }
         )
     )
+=======
+from django.db import models
+
+# Create your models here.
+>>>>>>> 1f69843 (created an appl for authentication)

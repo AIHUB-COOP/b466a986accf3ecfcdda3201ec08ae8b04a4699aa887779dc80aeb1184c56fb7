@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from xml.etree.ElementTree import QName
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
@@ -48,3 +49,8 @@ def login_view(request):
             msg = 'Error validating the form'
 
     return render(request, "auth/login.html", {"form": form, "msg": msg})
+=======
+from django.shortcuts import render
+
+# Create your views here.
+>>>>>>> 1f69843 (created an appl for authentication)
