@@ -55,9 +55,12 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'core.urls'
 
 TEMPLATE_DIR = os.path.join(CORE_DIR, "apps/templates") 
+<<<<<<< HEAD
 ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets') 
 
 
+=======
+>>>>>>> edd0357 (TEM-7 Added template - skeleton and changed settings directory)
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -126,10 +129,13 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(CORE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
+<<<<<<< HEAD
 
 STATICFILES_DIRS = (
     os.path.join(CORE_DIR, 'apps/static'),
 )
+=======
+>>>>>>> edd0357 (TEM-7 Added template - skeleton and changed settings directory)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
