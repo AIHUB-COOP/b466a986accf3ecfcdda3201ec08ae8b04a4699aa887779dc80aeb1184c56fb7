@@ -56,11 +56,17 @@ ROOT_URLCONF = 'core.urls'
 
 TEMPLATE_DIR = os.path.join(CORE_DIR, "apps/templates") 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets') 
 
 
 =======
 >>>>>>> edd0357 (TEM-7 Added template - skeleton and changed settings directory)
+=======
+ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets') 
+
+
+>>>>>>> f03ce49 (TEM-7 pasting open source  UI files)
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -136,6 +142,10 @@ STATICFILES_DIRS = (
 )
 =======
 >>>>>>> edd0357 (TEM-7 Added template - skeleton and changed settings directory)
+
+STATICFILES_DIRS = (
+    os.path.join(CORE_DIR, 'apps/static'),
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
