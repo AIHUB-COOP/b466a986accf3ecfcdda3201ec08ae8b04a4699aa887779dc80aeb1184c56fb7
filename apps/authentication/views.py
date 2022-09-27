@@ -73,4 +73,11 @@ def user_signup_view(request):
         form = SignUpForm() 
     
     return render(request,"auth/signup.html", {"form": form, "msg": message, "success": success})
+<<<<<<< HEAD
 >>>>>>> 8e54605 (TEM-7 created Views and Forms for Signup)
+=======
+
+
+def login_view(request):
+    pass
+>>>>>>> 1599dc7 (TEM-7 added urls and views for login page(Dummy))
