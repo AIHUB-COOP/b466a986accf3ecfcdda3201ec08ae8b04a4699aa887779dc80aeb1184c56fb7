@@ -15,3 +15,7 @@ def user_signup_view(request):
         form = SignUpForm() 
     
     return render(request,"auth/signup.html", {"form": form, "msg": message, "success": success})
+
+
+def login_view(request):
+    pass
