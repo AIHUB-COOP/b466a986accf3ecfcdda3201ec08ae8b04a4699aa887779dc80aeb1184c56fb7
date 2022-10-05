@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 from xml.etree.ElementTree import QName
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
@@ -56,6 +57,8 @@ from django.shortcuts import render
 # Create your views here.
 >>>>>>> 1f69843 (created an appl for authentication)
 =======
+=======
+>>>>>>> f03ce49e300078d90a99e58ab62b1f9da33cffe0
 from xml.etree.ElementTree import QName
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
@@ -74,10 +77,16 @@ def user_signup_view(request):
     
     return render(request,"auth/signup.html", {"form": form, "msg": message, "success": success})
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 8e54605 (TEM-7 created Views and Forms for Signup)
 =======
+=======
+>>>>>>> f03ce49e300078d90a99e58ab62b1f9da33cffe0
 
 
 def login_view(request):
     pass
+<<<<<<< HEAD
 >>>>>>> 1599dc7 (TEM-7 added urls and views for login page(Dummy))
+=======
+>>>>>>> f03ce49e300078d90a99e58ab62b1f9da33cffe0

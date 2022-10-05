@@ -57,6 +57,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATE_DIR = os.path.join(CORE_DIR, "apps/templates") 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets') 
 
 
@@ -67,6 +68,11 @@ ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets')
 
 
 >>>>>>> f03ce49 (TEM-7 pasting open source  UI files)
+=======
+ASSETS_ROOT = os.getenv('ASSETS_ROOT', '/static/assets') 
+
+
+>>>>>>> f03ce49e300078d90a99e58ab62b1f9da33cffe0
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -136,12 +142,15 @@ STATIC_ROOT = os.path.join(CORE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 STATICFILES_DIRS = (
     os.path.join(CORE_DIR, 'apps/static'),
 )
 =======
 >>>>>>> edd0357 (TEM-7 Added template - skeleton and changed settings directory)
+=======
+>>>>>>> f03ce49e300078d90a99e58ab62b1f9da33cffe0
 
 STATICFILES_DIRS = (
     os.path.join(CORE_DIR, 'apps/static'),

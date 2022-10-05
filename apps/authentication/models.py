@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Create your models here.
 """
 Since we are using Django default User models for authentication, Using models.py file for defining Signup and Login Forms.
@@ -78,6 +79,8 @@ from django.db import models
 # Create your models here.
 >>>>>>> 1f69843 (created an appl for authentication)
 =======
+=======
+>>>>>>> f03ce49e300078d90a99e58ab62b1f9da33cffe0
 # Create your models here.
 """
 Since we are using Django default User models for authentication, Using models.py file for defining Signup and Login Forms.
@@ -132,5 +135,9 @@ class SignUpForm(UserCreationForm):
 
 
 
+<<<<<<< HEAD
 #Login Form creation -> will be used in views @sharath
 >>>>>>> 8e54605 (TEM-7 created Views and Forms for Signup)
+=======
+#Login Form creation -> will be used in views @sharath
+>>>>>>> f03ce49e300078d90a99e58ab62b1f9da33cffe0
