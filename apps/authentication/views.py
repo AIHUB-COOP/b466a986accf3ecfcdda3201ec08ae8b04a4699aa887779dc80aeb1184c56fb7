@@ -2,7 +2,6 @@ from xml.etree.ElementTree import QName
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
 from .models import SignUpForm, LoginForm
-from django.contrib.auth.forms import AuthenticationForm
 
 # Create your views here.
 
@@ -11,7 +10,20 @@ def user_signup_view(request):
     success = False
     message = None
     if request.method == "POST":
-        pass
+        form = SignUpForm(request.POST)
+        print(form.is_valid())
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get("username")
+            student_id = form.cleaned_data.get('studentID')
+            raw_password = form.cleaned_data.get("pass1")
+            user = authenticate(username=username, password=raw_password)
+
+            message = 'User created - please <a href="/login">login</a>.'
+            success = True
+        else:
+            print(form.errors)
+            message = f'Form is not valid -- {form.errors}'
     else:
         form = SignUpForm() 
     
@@ -19,30 +31,20 @@ def user_signup_view(request):
 
 
 def login_view(request):
-
-    message = None
-
+    form = LoginForm(request.POST or None)
+    msg = None
     if request.method == "POST":
 
-        form = LoginForm(request, data=request.POST)
-        
         if form.is_valid():
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
+            username = form.cleaned_data.get("username")
+            password = form.cleaned_data.get("password")
             user = authenticate(username=username, password=password)
-            
             if user is not None:
                 login(request, user)
-                messages.info(request, f"You are now logged in as {username}.")
-                return redirect("main:homepage")
-            
+                return redirect("/")
             else:
-                messages.error(request,"Invalid username or password.")
-
+                msg = 'Invalid credentials'
         else:
-            messages.error(request,"Invalid username or password.")
-    
-    form = AuthenticationForm()
-	
-    # return render(request=request, template_name="main/login.html", context={"login_form":form})
-    return render(request,"auth/login.html", {"form": form, "msg": message})
+            msg = 'Error validating the form'
+
+    return render(request, "auth/login.html", {"form": form, "msg": msg})

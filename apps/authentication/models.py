@@ -32,14 +32,14 @@ class SignUpForm(UserCreationForm):
         }
         )
     )
-    pass1 = forms.CharField(
+    password1 = forms.CharField(
         widget=forms.PasswordInput(attrs={
             "placeholder": "Enter your Password",
             "class": "form-control",
         }
         )
     )
-    pass2 = forms.CharField(
+    password2 = forms.CharField(
         widget=forms.PasswordInput(attrs={
             "placeholder": "Re-enter your Password",
             "class": "form-control",
@@ -48,7 +48,7 @@ class SignUpForm(UserCreationForm):
     )
     class Meta:
         model = User
-        fields = ('username', 'studentID', 'email', 'pass1', 'pass2')
+        fields = ('username', 'studentID', 'email', 'password1', 'password2')
 
 
 
