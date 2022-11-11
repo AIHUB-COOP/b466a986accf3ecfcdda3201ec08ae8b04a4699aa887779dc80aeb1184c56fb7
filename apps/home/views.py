@@ -19,6 +19,10 @@ def pages(request):
         load_template = request.path.split('/')[-1]
         if load_template == 'admin':
             return HttpResponseRedirect(reverse('admin:index'))
+        if load_template in(['chart.html', 'plotly.html']):
+            context['segment'] = load_template
+            html_template = loader.get_template('dashboards/' + load_template)
+            return HttpResponse(html_template.render(context, request))
 
         context['segment'] = load_template
         html_template = loader.get_template('home/' + load_template)
@@ -30,6 +34,7 @@ def pages(request):
     except:
         pass
     #insert 500 page if you have
+
 
 
 
