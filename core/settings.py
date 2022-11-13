@@ -36,11 +36,13 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'apps.home',
+    'apps.dashboards',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.authentication',
+    "crispy_forms",
     
 ]
 
@@ -120,6 +122,8 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+GEOIP_PATH =os.path.join(BASE_DIR, 'geoip\GeoLite2-City_20191224\GeoLite2-City.mmdb')
 
 
 # Static files (CSS, JavaScript, Images)
