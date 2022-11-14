@@ -81,24 +81,24 @@ def render_plots(request):
 
 # Create your views here.
 def calculate_distance_view(request):
-    print('Im in here/////////////////')
+    # print('Im in here/////////////////')
     # initial values
     distance = None
     destination = None
     print('disthere', distance)
     obj = get_object_or_404(Measurement, id=1)
-    print('obj here', obj)
+    # print('obj here', obj)
     form = MeasurementModelForm(request.POST or None)
-    print('form here', form)
+    # print('form here', form)
     geolocator = Nominatim(user_agent='measurements')
 
     # ip = '72.14.207.99'
     ip = "173.242.180.236"
     # ip = get_ip_address(request)  # only works in production
-    print("ip------",ip)
+    # print("ip------",ip)
     country, city, lat, lon = get_geo(ip)
-    print(ip)
-    print( 'oopsssssssssssss',country, city, lat, lon)
+    # print(ip)
+    # print( 'oopsssssssssssss',country, city, lat, lon)
     location = geolocator.geocode(city)
 
     # location coordinates
@@ -116,6 +116,7 @@ def calculate_distance_view(request):
         instance = form.save(commit=False)
         destination_ = form.cleaned_data.get('destination')
         destination = geolocator.geocode(destination_)
+        # print(destination, "destttttttttttttt")
 
         # destination coordinates
         d_lat = destination.latitude
@@ -146,6 +147,7 @@ def calculate_distance_view(request):
 
     context = {
         'distance' : distance,
+        "current_location": f"{city.get('city')} ,{city.get('country_name')}",
         'destination': destination,
         'form': form,
         'map': m,
