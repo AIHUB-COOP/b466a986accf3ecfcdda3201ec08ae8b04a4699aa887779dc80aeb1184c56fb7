@@ -1,1 +1,1 @@
-# Django - SQLite
+# Django - MySQL
